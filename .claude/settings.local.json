@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -L \"https://brimages.com.br/p/01M1XXAPHAN48M25ZVWHMA6DFW\")",
+      "Bash(curl -s -L -D - -o /dev/null \"https://brimages.com.br/p/01M1XXAPHAN48M25ZVWHMA6DFW\")",
+      "Bash(curl -s -L \"https://brimages.com.br/i/01M1XXAPHAN48M25ZVWHMA6DFW.jpg\" -o \"C:\\\\\\\\Users\\\\\\\\Lenovo\\\\\\\\Downloads\\\\\\\\KIT- Sites IA\\\\\\\\aluguel-festa\\\\\\\\img\\\\\\\\banner-depiljoy.png\")",
+      "Bash(curl -s -L \"https://brimages.com.br/i/01M1XXAPHAN48M25ZVWHMA6DFW.png\" -o \"C:\\\\\\\\Users\\\\\\\\Lenovo\\\\\\\\Downloads\\\\\\\\KIT- Sites IA\\\\\\\\aluguel-festa\\\\\\\\img\\\\\\\\banner-depiljoy.png\")",
+      "WebFetch(domain:brimages.com.br)"
+    ]
+  }
+}

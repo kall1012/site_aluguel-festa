@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#7b2cbf" />
+  <title>Centro Estético DEPIL JOY — Estética e Beleza em Riacho Fundo II, Brasília-DF</title>
+  <meta name="description" content="Centro estético em Riacho Fundo II, Brasília-DF. Enzimas, depilação, maquiagem, design de sobrancelhas, jato de plasma, micropigmentação e massagem. Peça seu orçamento online." />
+  <link rel="icon" type="image/png" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <meta property="og:title" content="Centro Estético DEPIL JOY — Beleza e Bem-estar" />
+  <meta property="og:description" content="Catálogo e orçamento online para depilação, maquiagem, design de sobrancelhas, enzimas, jato de plasma e massagem em Riacho Fundo II/DF." />
+  <meta property="og:image" content="https://depiljoy.com.br/og.jpg" />
+  <meta property="og:url" content="https://depiljoy.com.br" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Centro Estético DEPIL JOY",
+    "image": "https://depiljoy.com.br/og.jpg",
+    "telephone": "+55-61-98641-0648",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "QN 15A Conjunto 01 Lote 27",
+      "addressLocality": "Riacho Fundo II",
+      "addressRegion": "DF",
+      "postalCode": "71881-310",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "17:00" }
+    ],
+    "url": "https://depiljoy.com.br",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <style>
+    :root {
+      --roxo: #7b2cbf;
+      --roxo-escuro: #5a189a;
+      --rosa: #ff5b9a;
+      --rosa-claro: #ffd6e7;
+      --amarelo: #ffd60a;
+      --amarelo-claro: #fff3a3;
+      --azul: #3a86ff;
+      --azul-claro: #bde0fe;
+      --bg: #faf7ff;
+      --texto: #1a1a2e;
+      --texto-suave: #5a5a6e;
+      --borda: #e8e3f3;
+      --verde: #25d366;
+      --sombra: 0 4px 20px rgba(123, 44, 191, 0.12);
+      --sombra-forte: 0 8px 32px rgba(123, 44, 191, 0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--texto);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding-bottom: 90px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
+
+    h1, h2, h3, h4 { font-family: 'Baloo 2', cursive; font-weight: 800; line-height: 1.15; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+    /* ============ HEADER / BANNER ============ */
+    .hero-banner {
+      width: 100%;
+      line-height: 0;
+      overflow: hidden;
+      display: block !important;
+    }
+
+    .hero-banner img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 600px;
+      object-fit: cover;
+      object-position: center;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    /* ============ NAV DE CATEGORIAS ============ */
+    .cat-nav-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid var(--borda);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .cat-nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap; margin: 0 auto; width: fit-content;
+      padding: 12px 16px;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      justify-content: center;
+    }
+
+    .cat-nav::-webkit-scrollbar { height: 0; }
+
+    .cat-tab {
+      flex: 0 0 auto;
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 2px solid var(--borda);
+      background: #fff;
+      color: var(--texto-suave);
+      font-weight: 600;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .cat-tab:hover { border-color: var(--rosa); color: var(--rosa); }
+
+    .cat-tab.active {
+      background: var(--roxo);
+      border-color: var(--roxo);
+      color: #fff;
+    }
+
+    /* ============ HORARIO ============ */
+    .horario-aviso {
+      background: var(--amarelo-claro);
+      border-left: 4px solid var(--amarelo);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+    .horario-aviso.fechado { background: #ffe5e5; border-left-color: #e74c3c; }
+    .horario-aviso.aberto { background: #d4f8e8; border-left-color: #2ecc71; }
+    .horario-aviso strong { font-family: 'Baloo 2', cursive; }
+
+    /* ============ REPETIR LISTA ============ */
+    .repeat-bar {
+      background: var(--azul-claro);
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .repeat-bar .repeat-btn {
+      background: var(--azul);
+      color: #fff;
+      border: 0;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    /* ============ COMBOS ============ */
+    .section-title {
+      font-size: 1.6rem;
+      margin: 32px 0 16px;
+      color: var(--roxo);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: "";
+      width: 6px;
+      height: 28px;
+      background: var(--rosa);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .combos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .combo-card {
+      background: linear-gradient(135deg, #fff 0%, var(--rosa-claro) 100%);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 4px 20px rgba(123, 44, 191, 0.12);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .combo-badge {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: var(--amarelo);
+      color: var(--texto);
+      padding: 4px 8px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    .combo-card h3 { color: var(--roxo-escuro); margin-bottom: 6px; font-size: 1.2rem; padding-right: 155px; }
+    .combo-card p { color: var(--texto-suave); font-size: 0.88rem; margin-bottom: 10px; }
+    .combo-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+    .combo-price .compo-de { text-decoration: line-through; color: var(--texto-suave); font-size: 0.95rem; }
+    .combo-price .compo-por { font-size: 1.4rem; font-weight: 800; color: var(--roxo); font-family: 'Baloo 2', cursive; }
+
+    .combo-add-btn {
+      width: 100%;
+      background: var(--roxo);
+      color: #fff;
+      border: 0;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .combo-add-btn:hover { background: var(--roxo-escuro); }
+
+    /* ============ CATEGORIAS ============ */
+    .category { padding-top: 8px; padding-bottom: 8px; }
+
+    .category-title {
+      font-size: 1.4rem;
+      color: var(--roxo);
+      margin: 24px 0 12px;
+      padding: 10px 14px;
+      background: #fff;
+      border-radius: 10px;
+      border-left: 4px solid var(--rosa);
+      box-shadow: var(--sombra);
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .item-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-card:active { transform: scale(0.98); }
+
+    .item-img {
+      display:flex;align-items:center;justify-content:center;
+      height:140px;overflow:hidden;
+      background:linear-gradient(135deg,var(--pink-light),#fff);
+      border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .item-img .card-img {
+      width:100%;height:100%;object-fit:cover;
+    }
+
+    .item-body { padding: 10px; flex: 1; display: flex; flex-direction: column; }
+    .item-name { font-weight: 700; margin-bottom: 2px; font-size: 0.85rem; line-height: 1.3; }
+    .item-desc { color: var(--texto-suave); font-size: 0.75rem; margin-bottom: 6px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .item-price { font-weight: 800; color: var(--roxo); font-size: 1rem; margin-bottom: 8px; font-family: 'Baloo 2', cursive; line-height: 1; }
+    .item-price small { font-size: 0.65rem; font-weight: 500; color: var(--texto-suave); font-family: 'Inter', sans-serif; }
+
+    .add-btn {
+      background: var(--rosa);
+      color: #fff;
+      border: 0;
+      padding: 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .add-btn:hover { background: var(--roxo); }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--roxo);
+      border-radius: 8px;
+      padding: 3px;
+    }
+    .qty-btn {
+      background: #fff;
+      color: var(--roxo);
+      border: 0;
+      width: 30px; height: 30px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: grid; place-items: center;
+    }
+    .qty-val { color: #fff; font-weight: 700; font-size: 0.95rem; min-width: 20px; text-align: center; }
+
+    /* ============ BOTTOM SHEET ============ */
+    .sheet-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+    }
+    .sheet-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .sheet {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: #fff;
+      border-radius: 20px 20px 0 0;
+      z-index: 101;
+      height: 92vh;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 -4px 30px rgba(0,0,0,0.15);
+      will-change: transform;
+    }
+    .sheet.open { transform: translateY(0); }
+
+    .sh-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--borda);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 20px 20px 0 0;
+    }
+    .sh-head h2 { font-size: 1.15rem; color: var(--roxo); }
+    .sh-close {
+      background: var(--borda);
+      border: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      color: var(--texto);
+      display: grid; place-items: center;
+    }
+
+    .sh-body {
+      flex: 0 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      max-height: 34vh;
+      padding: 12px 16px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sh-foot {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 12px 16px 16px;
+      background: var(--bg);
+      border-top: 1px solid var(--borda);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .line-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      border: 1px solid var(--borda);
+    }
+
+    .line-item-info { flex: 1 1 120px; min-width: 0; }
+    .line-name { font-weight: 600; font-size: 0.88rem; }
+    .line-sub { font-size: 0.75rem; color: var(--texto-suave); }
+
+    .line-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+    .line-mini-qty {
+      display: flex; align-items: center; gap: 2px;
+      background: var(--borda);
+      border-radius: 6px;
+      padding: 2px;
+    }
+    .line-mini-qty button {
+      background: #fff; border: 0;
+      width: 26px; height: 26px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: grid; place-items: center;
+    }
+    .line-mini-qty span { padding: 0 4px; font-weight: 600; font-size: 0.85rem; }
+    .line-price { font-weight: 700; color: var(--roxo); font-family: 'Baloo 2', cursive; font-size: 0.95rem; }
+    .line-remove {
+      background: none; border: 0;
+      color: #e74c3c; font-size: 1.2rem;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+    }
+
+    .upsell-area {
+      background: linear-gradient(135deg, var(--amarelo-claro), var(--rosa-claro));
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .upsell-area h3 { font-size: 0.95rem; color: var(--roxo-escuro); margin-bottom: 8px; }
+
+    .bonus-bar {
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 2px dashed var(--rosa);
+    }
+    .bonus-bar .bar {
+      height: 10px;
+      background: var(--borda);
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+    .bonus-bar .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--rosa), var(--amarelo));
+      width: 0%;
+      transition: width 0.4s;
+      border-radius: 5px;
+    }
+    .bonus-bar.unlocked {
+      background: linear-gradient(135deg, var(--amarelo), var(--rosa));
+      color: #fff;
+      border-style: solid;
+    }
+    .bonus-bar.unlocked .bar-fill { background: #fff; }
+    .bonus-bar p { font-size: 0.82rem; margin-top: 4px; }
+
+    .upsell-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .upsell-chip {
+      background: #fff;
+      border: 2px solid var(--rosa);
+      color: var(--roxo);
+      padding: 5px 10px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .upsell-chip:hover { background: var(--rosa); color: #fff; }
+
+    .totals-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid var(--borda);
+    }
+    .totals-row {
+      display: flex; justify-content: space-between;
+      padding: 4px 0;
+      font-size: 0.9rem;
+    }
+    .totals-row.total {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--roxo);
+      border-top: 1px dashed var(--borda);
+      padding-top: 10px;
+      margin-top: 8px;
+      font-family: 'Baloo 2', cursive;
+    }
+
+    .form-group { margin-bottom: 10px; }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--texto);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid var(--borda);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #fff;
+      color: var(--texto);
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--rosa);
+      box-shadow: 0 0 0 3px rgba(255, 91, 154, 0.15);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .coupon-row { display: flex; gap: 6px; }
+    .coupon-row input { flex: 1; text-transform: uppercase; letter-spacing: 0.5px; }
+    .coupon-apply-btn {
+      background: var(--amarelo);
+      color: var(--texto);
+      border: 0;
+      padding: 0 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .coupon-msg { font-size: 0.8rem; margin-top: 4px; }
+    .coupon-msg.ok { color: #2ecc71; }
+    .coupon-msg.err { color: #e74c3c; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--verde);
+      color: #fff;
+      border: 0;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: #1ebe5b; }
+
+    /* ============ Efeito de Magnificação do Menu (inspirado no Apple Dock) ============ */
+    .cat-nav {
+      transform: translateZ(0); /* Garante que o menu seja renderizado em 3D */
+      perspective: 1000px;
+    }
+
+    .cat-tab {
+      transform-style: preserve-3d;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+      position: relative;
+      z-index: 1;
+      will-change: transform, box-shadow;
+    }
+
+    .cat-tab:hover {
+      border-color: var(--rosa);
+      color: var(--rosa);
+      transform: translateY(-2px) scale(1.08);
+      box-shadow: 0 8px 20px rgba(119, 44, 191, 0.3);
+      z-index: 2;
+    }
+
+    .cat-tab.active {
+      background: var(--roxo);
+      border-color: var(--roxo);
+      color: #fff;
+      transform: translateY(-2px) scale(1.08);
+      box-shadow: 0 8px 20px rgba(119, 44, 191, 0.3);
+      z-index: 2;
+    }
+
+    /* Efeito de magnificação proporcional ao mouse */
+    .cat-nav {
+      position: relative;
+    }
+
+    .cat-tab {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Efeito de magnificação suave quando o mouse passa por cima */
+    .cat-nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: fit-content;
+      padding: 12px 16px;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      justify-content: center;
+      transform: translateZ(0);
+      perspective: 1000px;
+    }
+
+    /* Adicionar classe para o efeito de magnificação */
+    .cat-nav.magnify-effect {
+      position: relative;
+    }
+
+    .cat-nav.magnify-effect .cat-tab {
+      position: relative;
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .submit-sticky-wrap {
+      position: sticky;
+      bottom: 0;
+      background: var(--bg);
+      padding: 8px 0;
+      z-index: 2;
+    }
+
+    /* ============ FAB ============ */
+    .fab {
+      position: fixed;
+      right: 16px; bottom: 16px;
+      background: var(--roxo);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 50px;
+      box-shadow: var(--sombra-forte);
+      z-index: 90;
+      display: flex; align-items: center; gap: 10px;
+      border: 0;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.2s;
+      max-width: calc(100vw - 32px);
+    }
+    .fab:hover { transform: translateY(-2px); }
+    .fab-qty {
+      background: var(--amarelo);
+      color: var(--texto);
+      padding: 2px 8px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* ============ SOBRE ============ */
+    .about-section {
+      background: #fff;
+      padding: 32px 16px;
+      margin-top: 32px;
+      border-radius: 24px 24px 0 0;
+    }
+    .about-wrap { max-width: 760px; margin: 0 auto; text-align: center; }
+    .about-wrap h2 { color: var(--roxo); margin-bottom: 12px; font-size: 1.6rem; }
+    .about-wrap p { color: var(--texto-suave); margin-bottom: 8px; }
+
+    /* ============ INSTALL BAR ============ */
+    .install-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--roxo);
+      color: #fff;
+      padding: 12px 16px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      z-index: 85;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.15);
+    }
+    .install-bar.show { display: flex; }
+    .install-bar .install-btn {
+      background: #fff;
+      color: var(--roxo);
+      border: 0;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .install-bar .dismiss-btn {
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      border: 0;
+      padding: 4px 8px;
+      font-size: 1.2rem;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--roxo-escuro);
+      color: #fff;
+      padding: 32px 16px;
+      text-align: center;
+    }
+    footer h3 { margin-bottom: 12px; }
+    footer p { opacity: 0.9; font-size: 0.9rem; margin-bottom: 4px; }
+    footer a { color: var(--amarelo); font-weight: 600; }
+    .footer-map {
+      display: inline-block;
+      background: var(--rosa);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (min-width: 480px) {
+      .items-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    }
+
+    @media (min-width: 768px) {
+      .items-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .combos-grid { grid-template-columns: repeat(2, 1fr); }
+      .cat-nav { padding: 14px 24px; }
+      .sheet { max-height: 85vh; height: 85vh; border-radius: 24px 24px 0 0; left: 20%; right: 20%; }
+    }
+
+    @media (min-width: 1024px) {
+      .items-grid { grid-template-columns: repeat(4, 1fr); }
+      .combos-grid { grid-template-columns: repeat(4, 1fr); }
+      .sheet { left: 30%; right: 30%; }
+    }
+
+    /* ============ EMPTY STATE ============ */
+    .empty-state {
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--texto-suave);
+    }
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 8px; }
+    .empty-state p { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- BANNER -->
+  <section class="hero-banner">
+    <img src="img/banner-depiljoy.png?v=20260907-2" alt="Banner Centro Estético DEPIL JOY" />
+  </section>
+
+  <nav class="cat-nav-wrapper" aria-label="Categorias">
+    <div class="cat-nav" id="catNav"></div>
+  </nav>
+
+  <main class="container">
+    <div id="horarioAviso"></div>
+    <div id="repeatBar"></div>
+
+    <h2 class="section-title">Combos Especiais</h2>
+    <p style="color:var(--texto-suave); margin-bottom:16px; font-size:0.92rem;">
+      Kits prontos com desconto. Adicione com um clique. Cupom <strong>COMBO10</strong> dá 10% extra.
+    </p>
+    <div class="combos-grid" id="combosGrid"></div>
+
+    <h2 class="section-title">Catálogo</h2>
+    <div id="catalogRoot"></div>
+
+    <section class="about-section">
+      <div class="about-wrap">
+        <h2>Sobre o DEPIL JOY</h2>
+        <p>Somos um centro estético em Riacho Fundo II, Brasília-DF, dedicado a realçar sua beleza e cuidar do seu bem-estar.</p>
+        <p>Equipe profissional, ambiente acolhedor e produtos de qualidade. Do design de sobrancelhas à aplicação de enzimas, oferecemos uma experiência completa para você se sentir renovada.</p>
+        <p>Venha nos visitar ou peça seu orçamento online agora mesmo — respondemos rápido pelo WhatsApp.</p>
+      </div>
+    </section>
+  </main>
+
+  <button class="fab" id="fabBtn" onclick="openSheet()">
+    <span id="fabLabel">Ver minha lista</span>
+    <span class="fab-qty" id="fabQty">0</span>
+  </button>
+
+  <div class="sheet-overlay" id="sheetOverlay" onclick="closeSheet()"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sh-head">
+      <h2 id="sheetTitle">Sua lista de orçamento</h2>
+      <button class="sh-close" onclick="closeSheet()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="sh-body" id="sheetBody"></div>
+    <div class="sh-foot" id="sheetFoot"></div>
+  </div>
+
+  <div class="install-bar" id="installBar">
+    <span>📲 Instale no seu celular</span>
+    <button class="install-btn" onclick="installPWA()">Instalar</button>
+    <button class="dismiss-btn" onclick="dismissInstall()">✕</button>
+  </div>
+
+  <footer>
+    <h3>Centro Estético DEPIL JOY</h3>
+    <p>QN 15A Conjunto 01 Lote 27 — Riacho Fundo II, Brasília-DF</p>
+    <p>CEP 71881-310</p>
+    <p>Seg a Sex: 8h às 19h · Sáb: 8h às 17h</p>
+    <p><a href="tel:+5561986410648">(61) 98641-0648</a></p>
+    <a class="footer-map" target="_blank" rel="noopener"
+       href="https://www.google.com/maps/dir//Depiljoy,+Riacho+Fundo+II+-+1A+Etapa+QN+15A+-+Riacho+Fundo+II,+Bras%C3%ADlia+-+DF,+71881-310/">
+      Como chegar
+    </a>
+    <p style="margin-top:18px; opacity:0.7; font-size:0.8rem;">© DEPIL JOY — Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    /* ==================== DADOS ==================== */
+    const WHATSAPP = "5561986410648";
+    const ENDERECO = "QN 15A Conjunto 01 Lote 27, Riacho Fundo II, Brasília-DF, 71881-310";
+    const MAPS_URL = "https://www.google.com/maps/dir//Depiljoy,+Riacho+Fundo+II+-+1A+Etapa+QN+15A+-+Riacho+Fundo+II,+Bras%C3%ADlia+-+DF,+71881-310/";
+
+    const COUPONS = {
+      "COMBO10": { type: "percent", value: 10, label: "10% off combos" },
+      "PRIMEIRA": { type: "percent", value: 10, label: "Primeira visita 10%" },
+      "BELEZA5": { type: "fixed", value: 5, label: "R$ 5 off" }
+    };
+
+    const CATEGORIES = [
+      {
+        id: "enzima", name: "Aplicação de Enzimas", emoji: "",
+        items: [
+          { id: "enzima-1", name: "Enzimas — Abdômen", desc: "Redução de gordura localizada e remodelagem corporal.", price: 180, img: "img/enzima-abdomem.png" },
+          { id: "enzima-2", name: "Enzimas — Coxas", desc: "Tratamento para gordura localizada e firmeza.", price: 200, img: "img/enzima-coxas.png" },
+          { id: "enzima-3", name: "Enzimas — Glúteos", desc: "Modelagem e melhora do contorno corporal.", price: 220, img: "img/enzima-gluteos.png" },
+          { id: "enzima-4", name: "Enzimas — Braços", desc: "Redução de gordura e melhora da firmeza.", price: 160, img: "img/enzima-bracos.png" },
+          { id: "enzima-5", name: "Sessão Completa (4 Áreas)", desc: "Tratamento completo em várias áreas do corpo.", price: 650, img: "img/enzima-tratamento.png" }
+        ]
+      },      
+      {
+        id: "depilacao", name: "Depilação", emoji: "",
+        items: [
+          { id: "dep-1", name: "Depilação Completa", desc: "Pernas, axilas, virilha e buço. Pele lisa por semanas.", price: 180, img: "img/depilacao-completa.png" },
+          { id: "dep-2", name: "Pernas", desc: "Pernas completas, do joelho para baixo.", price: 70, img: "img/depilacao-pernas.png" },
+          { id: "dep-3", name: "Axilas", desc: "Pele macia e sem pelos nas axilas.", price: 35, img: "img/depilacao-axilas.png" },
+          { id: "dep-4", name: "Virilha", desc: "Higiene e conforto para o dia a dia.", price: 50, img: "img/depilacao-virilha.png" },
+          { id: "dep-5", name: "Buço", desc: "Remoção delicada da área do bigode.", price: 25, img: "img/depilacao-buco.png" },
+          { id: "dep-6", name: "Braços", desc: "Pele macia e uniforme nos braços.", price: 55, img: "img/depilacao-bracos.png" }
+        ]
+      },
+      {
+        id: "maquiagem", name: "Maquiagem", emoji: "",
+        items: [
+          { id: "maq-1", name: "Maquiagem Social", desc: "Para eventos, festas e ocasiões especiais.", price: 150, img: "img/maquiagem-social.png" },
+          { id: "maq-2", name: "Maquiagem Noiva", desc: "Pele perfeita para o grande dia. Teste prévio.", price: 350, img: "img/maquiagem-noiva.png" },
+          { id: "maq-3", name: "Maquiagem Festiva", desc: "Brilho, olhos marcantes e longa duração.", price: 180, img: "img/maquiagem-festiva.png" },
+          { id: "maq-4", name: "Automaquiagem", desc: "Workshop: aprenda a se maquiar sozinha em 1h30.", price: 200, img: "img/maquiagem-automaquiagem.png" }
+        ]
+      },
+      {
+        id: "sobrancelhas", name: "Design de Sobrancelhas", emoji: "",
+        items: [
+          { id: "sob-1", name: "Design de Sobrancelhas", desc: "Mapeamento facial e acabamento perfeito.", price: 35, img: "img/design-sobrancelhas.png" },
+          { id: "sob-2", name: "Design com Henna", desc: "Sobrancelhas mais cheias e definidas.", price: 50, img: "img/design-henna.png" },
+          { id: "sob-3", name: "Design + Tintura", desc: "Design completo com tintura para realçar o olhar.", price: 65, img: "img/design-tintura.png" }
+        ]
+      },
+      {
+        id: "plasma", name: "Jato de Plasma", emoji: "",
+        items: [
+          { id: "plasma-1", name: "Plasma — Sessão Facial", desc: "Rejuvenescimento, firmeza e textura da pele.", price: 250, img: "img/plasma-facial.png" },
+          { id: "plasma-2", name: "Plasma — Área dos Olhos", desc: "Reduz rugas e flacidez ao redor dos olhos.", price: 200, img: "img/plasma-olhos.png" },
+          { id: "plasma-3", name: "Pacote 3 Sessões Plasma", desc: "Tratamento completo com desconto especial.", price: 650, img: "img/plasma-pacote.png" }
+        ]
+      },
+      {
+        id: "micro", name: "Micropigmentação", emoji: "",
+        items: [
+          { id: "micro-1", name: "Micro Sobrancelhas", desc: "Técnica fio a fio para sobrancelhas naturais.", price: 450, img: "img/micro-sobrancelhas.png" },
+          { id: "micro-2", name: "Micro Lábios", desc: "Lábios corados com efeito natural e duradouro.", price: 400, img: "img/micro-labios.png" },
+          { id: "micro-3", name: "Micro Olhos", desc: "Delineado permanente suave e elegante.", price: 380, img: "img/micro-olhos.png" },
+          { id: "micro-4", name: "Retoque Micro", desc: "Manutenção até 60 dias após o procedimento.", price: 180, img: "img/micro-retoque.png" }
+        ]
+      },
+      {
+        id: "massagem", name: "Massagem", emoji: "",
+        items: [
+          { id: "mass-1", name: "Massagem Relaxante", desc: "60 min de alívio de tensões e bem-estar.", price: 130, img: "img/massagem-relaxante.png" },
+          { id: "mass-2", name: "Drenagem Linfática", desc: "60 min para reduzir retenção e desintoxicar.", price: 150, img: "img/drenagem-linfatica.png" },
+          { id: "mass-3", name: "Massagem Modeladora", desc: "60 min auxiliando no combate à gordura localizada.", price: 160, img: "img/massagem-modeladora.png" },
+          { id: "mass-4", name: "Pedras Quentes", desc: "60 min de relaxamento profundo com pedras.", price: 170, img: "img/massagem-pedras.png" }
+        ]
+      }
+    ];
+
+    const COMBOS = [
+      { id: "combo-express", name: "Kit Beleza Express", desc: "Design de sobrancelhas + buço + axilas — tudo pronto pro dia a dia.", items: ["sob-1", "dep-3", "dep-5"], oldPrice: 95, price: 75 },
+      { id: "combo-renovacao", name: "Kit Renovação da Pele", desc: "Limpeza + jato de plasma facial + design com henna — pele nova.", items: ["dep-5", "plasma-1", "sob-2"], oldPrice: 305, price: 239 },
+      { id: "combo-diva", name: "Kit Diva Completa", desc: "Maquiagem social + design com henna + massagem relaxante.", items: ["maq-1", "sob-2", "mass-1"], oldPrice: 330, price: 269 },
+      { id: "combo-noiva", name: "Kit Noiva", desc: "Maquiagem de noiva + design de sobrancelhas + massagem relaxante.", items: ["maq-2", "sob-1", "mass-1"], oldPrice: 515, price: 449 }
+    ];
+
+    const UPSELL_ITEMS = ["dep-3", "dep-5", "sob-2", "mass-1"];
+
+    /* ==================== ESTADO ==================== */
+    let cart = {};
+    let coupon = null;
+    let bonusUnlocked = false;
+    const BONUS_THRESHOLD = 350;
+
+    /* ==================== HELPERS ==================== */
+    const $ = (s, p) => (p || document).querySelector(s);
+    const $$ = (s, p) => Array.from((p || document).querySelectorAll(s));
+
+    function brl(n) {
+      return "R$ " + n.toFixed(2).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function getItem(id) {
+      for (const cat of CATEGORIES) {
+        const it = cat.items.find(i => i.id === id);
+        if (it) return { ...it, categoryName: cat.name };
+      }
+      const co = COMBOS.find(c => c.id === id);
+      if (co) return { id: co.id, name: co.name, desc: co.desc, price: co.price, emoji: "🎁", categoryName: "Combo", isCombo: true };
+      return null;
+    }
+
+    function itemCount() { return Object.values(cart).reduce((a, b) => a + b, 0); }
+
+    function subtotal() {
+      let s = 0;
+      for (const [id, qty] of Object.entries(cart)) {
+        const it = getItem(id);
+        if (it) s += it.price * qty;
+      }
+      return s;
+    }
+
+    function applyDiscount(sub) {
+      if (!coupon || !COUPONS[coupon]) return 0;
+      const c = COUPONS[coupon];
+      if (c.type === "percent") return Math.round(sub * c.value / 100);
+      if (c.type === "fixed") return Math.min(c.value, sub);
+      return 0;
+    }
+
+    function totals() {
+      const sub = subtotal();
+      const off = applyDiscount(sub);
+      return { sub, off, total: Math.max(0, sub - off) };
+    }
+
+    /* ==================== PERSIST ==================== */
+    function persist() {
+      try { localStorage.setItem("depil-joy-cart", JSON.stringify(cart)); } catch (e) {}
+    }
+
+    function loadCart() {
+      try {
+        const raw = localStorage.getItem("depil-joy-cart");
+        if (raw) cart = JSON.parse(raw) || {};
+      } catch (e) { cart = {}; }
+    }
+
+    /* ==================== RENDER COMBOS ==================== */
+    function renderCombos() {
+      const root = $("#combosGrid");
+      if (!root) return;
+      root.innerHTML = "";
+      COMBOS.forEach(co => {
+        const save = co.oldPrice - co.price;
+        root.innerHTML += `
+          <div class="combo-card">
+            <span class="combo-badge">Economize ${brl(save)}</span>
+            <h3>${co.name}</h3>
+            <p>${co.desc}</p>
+            <div class="combo-price">
+              <span class="compo-de">${brl(co.oldPrice)}</span>
+              <span class="compo-por">${brl(co.price)}</span>
+            </div>
+            <button class="combo-add-btn" onclick="addCombo('${co.id}')">Adicionar combo</button>
+          </div>`;
+      });
+    }
+
+    /* ==================== RENDER CATALOG ==================== */
+    function renderCatalog() {
+      const nav = $("#catNav");
+      const root = $("#catalogRoot");
+      if (!nav || !root) return;
+      nav.innerHTML = "";
+      root.innerHTML = "";
+
+      // Add Combos Especiais tab first
+      const comboTab = document.createElement("button");
+      comboTab.className = "cat-tab";
+      comboTab.textContent = "⭐ Combos Especiais";
+      comboTab.addEventListener("click", () => {
+        const combosGrid = document.getElementById("combosGrid");
+        if (combosGrid) {
+          // Remove 'active' de todos os tabs
+          document.querySelectorAll('.cat-tab').forEach(tab => {
+            tab.classList.remove('active');
+          });
+          // Adiciona 'active' ao tab de Combos Especiais
+          comboTab.classList.add('active');
+          // Calcula o scroll para mostrar a seção completamente
+          const top = combosGrid.getBoundingClientRect().top + window.scrollY - 150;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+      nav.appendChild(comboTab);
+
+      CATEGORIES.forEach((cat, idx) => {
+        const tab = document.createElement("button");
+        tab.className = "cat-tab" + (idx === 0 ? " active" : "");
+        tab.dataset.target = cat.id;
+        tab.textContent = cat.emoji + " " + cat.name;
+        tab.addEventListener("click", () => {
+          document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const el = $("#cat-" + cat.id);
+          if (el) {
+            const top = el.getBoundingClientRect().top + window.scrollY - 70;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        });
+        nav.appendChild(tab);
+
+        let gridHtml = "";
+        cat.items.forEach(it => {
+          gridHtml += `
+            <div class="item-card" id="card-${it.id}">
+              <div class="item-img">
+                <img src="${it.img}" alt="${it.name}" class="card-img" />
+              </div>
+              <div class="item-body">
+                <div class="item-name">${it.name}</div>
+                <div class="item-desc">${it.desc}</div>
+                <div class="item-price">${brl(it.price)} <small>por sessao</small></div>
+                <div id="ctrl-${it.id}"></div>
+              </div>
+            </div>`;
+        });
+
+        root.innerHTML += `
+          <section class="category" id="cat-${cat.id}">
+            <h3 class="category-title">${cat.emoji} ${cat.name}</h3>
+            <div class="items-grid">${gridHtml}</div>
+          </section>`;
+      });
+
+      refreshAllCards();
+    }
+
+    /* ==================== CARD CONTROLS ==================== */
+    function refreshAllCards() {
+      CATEGORIES.forEach(cat => cat.items.forEach(it => renderCtrl(it.id)));
+      COMBOS.forEach(co => renderCtrl(co.id));
+    }
+
+    function renderCtrl(id) {
+      const host = $("#ctrl-" + id);
+      if (!host) return;
+      const qty = cart[id] || 0;
+      if (qty === 0) {
+        host.innerHTML = '<button class="add-btn" onclick="addItem(\'' + id + '\')">Adicionar</button>';
+      } else {
+        host.innerHTML =
+          '<div class="qty-control">' +
+            '<button class="qty-btn" onclick="decItem(\'' + id + '\')">−</button>' +
+            '<span class="qty-val">' + qty + '</span>' +
+            '<button class="qty-btn" onclick="addItem(\'' + id + '\')">+</button>' +
+          '</div>';
+      }
+    }
+
+    /* ==================== CART OPS ==================== */
+    function addItem(id) {
+      cart[id] = (cart[id] || 0) + 1;
+      persist();
+      renderCtrl(id);
+      updateFab();
+      if (isSheetOpen()) renderSheet();
+    }
+
+    function decItem(id) {
+      cart[id] = (cart[id] || 0) - 1;
+      if (cart[id] <= 0) delete cart[id];
+      persist();
+      renderCtrl(id);
+      updateFab();
+      if (isSheetOpen()) renderSheet();
+    }
+
+    function addCombo(id) {
+      cart[id] = (cart[id] || 0) + 1;
+      persist();
+      COMBOS.find(c => c.id === id).items.forEach(itemId => {
+        // combo item counter is not in catalog cards, so just update
+      });
+      renderCtrl(id);
+      updateFab();
+      openSheet();
+    }
+
+    function setQty(id, q) {
+      if (q <= 0) delete cart[id];
+      else cart[id] = q;
+      persist();
+      renderCtrl(id);
+      updateFab();
+      renderSheet();
+    }
+
+    function removeItem(id) {
+      delete cart[id];
+      persist();
+      renderCtrl(id);
+      updateFab();
+      renderSheet();
+    }
+
+    /* ==================== FAB ==================== */
+    function updateFab() {
+      const c = itemCount();
+      const t = totals().total;
+      $("#fabQty").textContent = c;
+      const label = $("#fabLabel");
+      if (c > 0) {
+        label.textContent = brl(t) + " • ver lista";
+      } else {
+        label.textContent = "Ver minha lista";
+      }
+    }
+
+    /* ==================== SHEET ==================== */
+    function isSheetOpen() {
+      return $("#sheet").classList.contains("open");
+    }
+
+    function openSheet() {
+      $("#sheet").classList.add("open");
+      $("#sheetOverlay").classList.add("open");
+      document.body.classList.add("no-scroll");
+      renderSheet();
+    }
+
+    function closeSheet() {
+      $("#sheet").classList.remove("open");
+      $("#sheetOverlay").classList.remove("open");
+      document.body.classList.remove("no-scroll");
+    }
+
+    function renderSheet() {
+      const body = $("#sheetBody");
+      const foot = $("#sheetFoot");
+      const ids = Object.keys(cart);
+
+      if (ids.length === 0) {
+        body.innerHTML = '<div class="empty-state"><div class="empty-icon">🛍️</div><p>Sua lista esta vazia.</p><p style="font-size:0.85rem;">Adicione itens do catalogo ou escolha um combo.</p></div>';
+        foot.innerHTML = '<div class="submit-sticky-wrap"><button class="submit-btn" disabled>Adicione itens para enviar</button></div>';
+        return;
+      }
+
+      /* --- Body: itens --- */
+      let linesHtml = "";
+      ids.forEach(id => {
+        const it = getItem(id);
+        if (!it) return;
+        const q = cart[id];
+        const sub = it.price * q;
+        linesHtml +=
+          '<div class="line-item">' +
+            '<div class="line-item-info">' +
+              '<div class="line-name">' + (it.emoji ? it.emoji + ' ' : '') + it.name + '</div>' +
+              '<div class="line-sub">' + brl(it.price) + ' por sessao</div>' +
+            '</div>' +
+            '<div class="line-controls">' +
+              '<div class="line-mini-qty">' +
+                '<button onclick="setQty(\'' + id + '\', ' + (q - 1) + ')">−</button>' +
+                '<span>' + q + '</span>' +
+                '<button onclick="setQty(\'' + id + '\', ' + (q + 1) + ')">+</button>' +
+              '</div>' +
+              '<div class="line-price">' + brl(sub) + '</div>' +
+              '<button class="line-remove" onclick="removeItem(\'' + id + '\')" title="Remover">✕</button>' +
+            '</div>' +
+          '</div>';
+      });
+      body.innerHTML = linesHtml;
+
+      /* --- Footer: upsell + totais + form --- */
+      const { sub, off, total: t } = totals();
+      const bar = Math.min(100, (t / BONUS_THRESHOLD) * 100);
+      const faltam = Math.max(0, BONUS_THRESHOLD - t);
+      bonusUnlocked = t >= BONUS_THRESHOLD;
+      const sug = UPSELL_ITEMS.filter(id => !cart[id]).slice(0, 4);
+
+      let html = "";
+
+      /* bonus bar */
+      if (bonusUnlocked) {
+        html += '<div class="bonus-bar unlocked"><strong>Voce ganhou um beneficio exclusivo!</strong><p>Sobrancelhas + massagem relaxante gratis no dia da sua sessao.</p></div>';
+      } else {
+        html += '<div class="bonus-bar"><strong>Faltam ' + brl(faltam) + ' para um bonus!</strong><p>Adicione servicos e ganhe sobrancelhas + massagem relaxante gratis.</p><div class="bar"><div class="bar-fill" style="width:' + bar + '%;"></div></div></div>';
+      }
+
+      /* upsell chips */
+      if (sug.length) {
+        html += '<div class="upsell-area"><h3>Adicione tambem</h3><div class="upsell-chips">';
+        sug.forEach(id => {
+          const it = getItem(id);
+          html += '<button class="upsell-chip" onclick="addItem(\'' + id + '\')">+ ' + it.name + ' · ' + brl(it.price) + '</button>';
+        });
+        html += '</div></div>';
+      }
+
+      /* totals */
+      html += '<div class="totals-box">';
+      html += '<div class="totals-row"><span>Subtotal</span><span>' + brl(sub) + '</span></div>';
+      if (off > 0) html += '<div class="totals-row" style="color:#2ecc71;"><span>Cupom ' + coupon + '</span><span>- ' + brl(off) + '</span></div>';
+      if (bonusUnlocked) html += '<div class="totals-row" style="color:var(--rosa);"><span>Bonus de beleza</span><span>incluido</span></div>';
+      html += '<div class="totals-row total"><span>TOTAL ESTIMADO</span><span>' + brl(t) + '</span></div>';
+      html += '<p style="font-size:0.72rem; color:var(--texto-suave); text-align:right; margin-top:4px;">*Valor confirmado no WhatsApp</p>';
+      html += '</div>';
+
+      /* form */
+      html += '<form id="orderForm" onsubmit="event.preventDefault(); sendWhatsApp();">';
+      html += '<div class="form-group"><label>Nome *</label><input type="text" id="cliName" required maxlength="60" autocomplete="name" /></div>';
+      html += '<div class="form-row">';
+      html += '<div class="form-group"><label>WhatsApp *</label><input type="tel" id="cliPhone" required placeholder="(61) 9..." maxlength="20" autocomplete="tel" /></div>';
+      html += '<div class="form-group"><label>Data desejada *</label><input type="date" id="cliDate" required /></div>';
+      html += '</div>';
+      html += '<div class="form-group"><label>Cupom de desconto</label>';
+      html += '<div class="coupon-row"><input type="text" id="couponInput" maxlength="20" autocomplete="off" /><button type="button" class="coupon-apply-btn" onclick="applyCoupon()">Aplicar</button></div>';
+      html += '<div class="coupon-msg" id="couponMsg"></div></div>';
+      html += '<div class="form-group"><label>Observacao (opcional)</label><textarea id="cliObs" rows="2" maxlength="200" placeholder="Horario de preferencia, referencia..."></textarea></div>';
+      html += '<div class="submit-sticky-wrap"><button type="submit" class="submit-btn">📲 Solicitar Agendamento</button></div>';
+      html += '</form>';
+
+      foot.innerHTML = html;
+
+      /* set min date = amanha */
+      const d = new Date();
+      d.setDate(d.getDate() + 1);
+      const iso = d.toISOString().split("T")[0];
+      const dateInput = $("#cliDate");
+      if (dateInput) dateInput.min = iso;
+
+      /* restore client */
+      try {
+        const saved = JSON.parse(localStorage.getItem("depil-joy-client") || "{}");
+        if (saved.name) { const el = $("#cliName"); if (el) el.value = saved.name; }
+        if (saved.phone) { const el = $("#cliPhone"); if (el) el.value = saved.phone; }
+      } catch (e) {}
+
+      if (coupon) { const el = $("#couponInput"); if (el) el.value = coupon; }
+    }
+
+    function applyCoupon() {
+      const input = $("#couponInput");
+      const msg = $("#couponMsg");
+      if (!input || !msg) return;
+      const code = (input.value || "").trim().toUpperCase();
+      if (!code) { coupon = null; msg.textContent = ""; msg.className = "coupon-msg"; renderSheet(); return; }
+      if (COUPONS[code]) {
+        coupon = code;
+        msg.className = "coupon-msg ok";
+        msg.textContent = COUPONS[code].label + " aplicado!";
+        renderSheet();
+      } else {
+        coupon = null;
+        msg.className = "coupon-msg err";
+        msg.textContent = "Cupom invalido.";
+      }
+    }
+
+    /* ==================== WHATSAPP ==================== */
+    function fmtDate(iso) {
+      if (!iso) return "";
+      const [y, m, d] = iso.split("-");
+      return d + "/" + m + "/" + y;
+    }
+
+    function sendWhatsApp() {
+      const name = ($("#cliName") || {}).value || "";
+      const phone = ($("#cliPhone") || {}).value || "";
+      const date = ($("#cliDate") || {}).value || "";
+      const obs = ($("#cliObs") || {}).value || "";
+
+      if (!name.trim() || !phone.trim() || !date) {
+        alert("Preencha nome, WhatsApp e data.");
+        return;
+      }
+
+      try { localStorage.setItem("depil-joy-client", JSON.stringify({ name: name.trim(), phone: phone.trim() })); } catch (e) {}
+
+      const ids = Object.keys(cart);
+      let itemsTxt = "";
+      ids.forEach(id => {
+        const it = getItem(id);
+        const q = cart[id];
+        if (it) itemsTxt += q + "x " + it.name + " — " + brl(it.price * q) + "\n";
+      });
+
+      const { sub, off, total } = totals();
+
+      let msg = "";
+      msg += "*ORÇAMENTO DO SERVIÇO — Centro Estético DEPIL JOY*\n\n";
+      msg += "*Cliente:* " + name.trim() + "\n";
+      msg += "*WhatsApp:* " + phone.trim() + "\n";
+      msg += "*Data do evento:* " + fmtDate(date) + "\n\n";
+      msg += "*Itens:*\n" + itemsTxt + "\n";
+      msg += "Subtotal: " + brl(sub) + "\n";
+      if (off > 0) msg += "Cupom " + coupon + ": -" + brl(off) + "\n";
+      if (bonusUnlocked) msg += "Benefício: Sobrancelhas + massagem relaxante grátis\n";
+      msg += "*TOTAL ESTIMADO: " + brl(total) + "*\n\n";
+      if (obs.trim()) msg += "*Observação:* " + obs.trim() + "\n\n";
+      msg += "_Orçamento solicitado pelo site_";
+
+      const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+      window.open(url, "_blank");
+
+      try { localStorage.setItem("depil-joy-last", JSON.stringify({ cart, coupon })); } catch (e) {}
+
+      setTimeout(() => {
+        alert("A Depil Joy entrará em contato com você brevemente para confirmar seu agendamento. OBRIGADO PELA SUA PREFERÊNCIA!");
+      }, 1200);
+    }
+
+    /* ==================== REPETIR ULTIMA LISTA ==================== */
+    function checkRepeat() {
+      try {
+        const raw = localStorage.getItem("depil-joy-last");
+        if (!raw) return;
+        const last = JSON.parse(raw);
+        if (!last.cart || Object.keys(last.cart).length === 0) return;
+        if (itemCount() > 0) return;
+        const bar = $("#repeatBar");
+        if (!bar) return;
+        bar.innerHTML = '<div><strong>Repetir ultima lista?</strong><div style="font-size:0.85rem; color:var(--texto-suave);">Voce tem uma lista salva da ultima visita.</div></div><button class="repeat-btn" onclick="repeatLast()">Repetir</button>';
+      } catch (e) {}
+    }
+
+    function repeatLast() {
+      try {
+        const last = JSON.parse(localStorage.getItem("depil-joy-last") || "{}");
+        if (last.cart) {
+          cart = last.cart;
+          coupon = last.coupon || null;
+          persist();
+          refreshAllCards();
+          updateFab();
+          const bar = $("#repeatBar");
+          if (bar) bar.innerHTML = "";
+          openSheet();
+        }
+      } catch (e) {}
+    }
+
+    /* ==================== HORARIO ==================== */
+    function checkHours() {
+      const now = new Date();
+      const day = now.getDay();
+      const time = now.getHours() + now.getMinutes() / 60;
+      const el = $("#horarioAviso");
+      if (!el) return;
+      let html = "";
+
+      if (day >= 1 && day <= 5) {
+        if (time >= 8 && time < 19) {
+          html = '<div class="horario-aviso aberto"><span style="font-size:1.4rem;">🟢</span><div><strong>Aberto agora</strong> até as 19h. Pode mandar seu orçamento!</div></div>';
+        } else {
+          let prox = "amanha as 8h";
+          if (day === 5 && time < 8) prox = "hoje as 8h";
+          if (day === 5 && time >= 19) prox = "segunda as 8h";
+          html = '<div class="horario-aviso fechado"><span style="font-size:1.4rem;">🌙</span><div><strong>Fechado agora.</strong> Voltamos ' + prox + '. Monte sua lista e envie pelo WhatsApp.</div></div>';
+        }
+      } else if (day === 6) {
+        if (time >= 8 && time < 17) {
+          html = '<div class="horario-aviso aberto"><span style="font-size:1.4rem;">🟢</span><div><strong>Aberto agora</strong> até as 17h.</div></div>';
+        } else {
+          let prox = "segunda as 8h";
+          if (time < 8) prox = "hoje as 8h";
+          html = '<div class="horario-aviso fechado"><span style="font-size:1.4rem;">🌙</span><div><strong>Fechado agora.</strong> Voltamos ' + prox + '. Monte sua lista e envie pelo WhatsApp.</div></div>';
+        }
+      } else {
+        html = '<div class="horario-aviso fechado"><span style="font-size:1.4rem;">🌙</span><div><strong>Fechado hoje (domingo).</strong> Voltamos segunda as 8h. Monte sua lista e envie pelo WhatsApp.</div></div>';
+      }
+      el.innerHTML = html;
+    }
+
+    /* ==================== SCROLLSPY ==================== */
+    function setupScrollspy() {
+      function onScroll() {
+        const sections = $$(".category");
+        const tabs = $$(".cat-tab");
+        let cur = "";
+        sections.forEach(sec => {
+          const r = sec.getBoundingClientRect();
+          if (r.top <= 120 && r.bottom > 120) cur = sec.id.replace("cat-", "");
+        });
+        if (cur) tabs.forEach(t => t.classList.toggle("active", t.dataset.target === cur));
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    /* ==================== DEEP LINK ==================== */
+    function checkDeepLink() {
+      const params = new URLSearchParams(window.location.search);
+      const itemId = params.get("item");
+      if (!itemId) return;
+      const it = getItem(itemId);
+      if (!it) return;
+      cart[itemId] = 1;
+      persist();
+      refreshAllCards();
+      updateFab();
+      setTimeout(() => openSheet(), 400);
+    }
+
+    /* ==================== PWA ==================== */
+    let deferredInstall = null;
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault();
+      deferredInstall = e;
+      const isMobile = window.matchMedia("(max-width: 768px)").matches || window.matchMedia("(pointer: coarse)").matches;
+      if (isMobile && !localStorage.getItem("depil-joy-install-dismissed")) {
+        $("#installBar").classList.add("show");
+      }
+    });
+
+    function installPWA() {
+      if (!deferredInstall) return;
+      deferredInstall.prompt();
+      deferredInstall.userChoice.then(() => {
+        $("#installBar").classList.remove("show");
+        deferredInstall = null;
+      });
+    }
+
+    function dismissInstall() {
+      $("#installBar").classList.remove("show");
+      try { localStorage.setItem("depil-joy-install-dismissed", "1"); } catch (e) {}
+    }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", async () => {
+        try {
+          const registration = await navigator.serviceWorker.register("sw.js?v=20260907-2");
+          if (registration.waiting) registration.waiting.postMessage("SKIP_WAITING");
+          registration.addEventListener("updatefound", () => {
+            const worker = registration.installing;
+            if (!worker) return;
+            worker.addEventListener("statechange", () => {
+              if (worker.state === "installed" && navigator.serviceWorker.controller) {
+                worker.postMessage("SKIP_WAITING");
+              }
+            });
+          });
+        } catch (e) {}
+      });
+    }
+
+    /* ==================== APPLE DOCK MAGNIFICATION ==================== */
+    function setupAppleDockEffect() {
+      const nav = document.getElementById("catNav");
+      if (!nav) return;
+
+      const tabs = Array.from(nav.querySelectorAll(".cat-tab"));
+      if (tabs.length === 0) return;
+
+      // Adiciona estilos inline ou via classe
+      nav.addEventListener("mousemove", (e) => {
+        const navRect = nav.getBoundingClientRect();
+        const mouseX = e.clientX;
+
+        // Se o mouse estiver fora da área horizontal do menu, reseta
+        if (mouseX < navRect.left || mouseX > navRect.right) {
+          tabs.forEach(tab => {
+            tab.style.transform = "";
+          });
+          return;
+        }
+
+        tabs.forEach(tab => {
+          const rect = tab.getBoundingClientRect();
+          const tabCenterX = rect.left + rect.width / 2;
+          const distance = Math.abs(mouseX - tabCenterX);
+
+          // Raio de alcance do efeito (em pixels)
+          const range = 180;
+
+          if (distance < range) {
+            // Calcula o fator de escala de 1.0 até 1.35 baseado na proximidade
+            const percent = 1 - (distance / range);
+            const scale = 1 + (0.32 * percent);
+            const translateY = -4 * percent;
+            tab.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+            tab.style.zIndex = Math.round(10 + percent * 10);
+          } else {
+            tab.style.transform = "";
+            tab.style.zIndex = "";
+          }
+        });
+      });
+
+      nav.addEventListener("mouseleave", () => {
+        tabs.forEach(tab => {
+          tab.style.transform = "";
+          tab.style.zIndex = "";
+        });
+      });
+    }
+
+    /* ==================== INIT ==================== */
+    loadCart();
+    renderCombos();
+    renderCatalog();
+    checkHours();
+    setInterval(checkHours, 300000);
+    setupScrollspy();
+    checkRepeat();
+    checkDeepLink();
+    updateFab();
+    setupAppleDockEffect();
+  </script>
+</body>
+</html>

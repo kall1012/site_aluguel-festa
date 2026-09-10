@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "depil-joy-site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8989"],
+      "port": 8989,
+      "autoPort": false
+    }
+  ]
+}

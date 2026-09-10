@@ -1,0 +1,23 @@
+{
+  "name": "Centro Estético DEPIL JOY",
+  "short_name": "DEPIL JOY",
+  "description": "Catalogo e orcamento para Centro Estetico DEPIL JOY - Enzimas, Depilacao, Maquiagem, Design de Sobrancelhas, Jato de Plasma, Micropigmentacao e Massagem",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7b2cbf",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
