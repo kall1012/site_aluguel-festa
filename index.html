@@ -591,71 +591,24 @@
     }
     .submit-btn:hover { background: #1ebe5b; }
 
-    /* ============ Efeito de Magnificação do Menu (inspirado no Apple Dock) ============ */
-    .cat-nav {
-      transform: translateZ(0); /* Garante que o menu seja renderizado em 3D */
-      perspective: 1000px;
-    }
-
+    /* ============ Efeito Suave de Hover no Menu (Apple Dock sutil) ============ */
     .cat-tab {
-      transform-style: preserve-3d;
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+      transition: all 0.2s ease-out;
       position: relative;
-      z-index: 1;
-      will-change: transform, box-shadow;
+      will-change: transform;
     }
 
     .cat-tab:hover {
       border-color: var(--rosa);
       color: var(--rosa);
-      transform: translateY(-2px) scale(1.08);
-      box-shadow: 0 8px 20px rgba(119, 44, 191, 0.3);
-      z-index: 2;
+      box-shadow: 0 4px 12px rgba(119, 44, 191, 0.15);
     }
 
     .cat-tab.active {
       background: var(--roxo);
       border-color: var(--roxo);
       color: #fff;
-      transform: translateY(-2px) scale(1.08);
-      box-shadow: 0 8px 20px rgba(119, 44, 191, 0.3);
-      z-index: 2;
-    }
-
-    /* Efeito de magnificação proporcional ao mouse */
-    .cat-nav {
-      position: relative;
-    }
-
-    .cat-tab {
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Efeito de magnificação suave quando o mouse passa por cima */
-    .cat-nav {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin: 0 auto;
-      width: fit-content;
-      padding: 12px 16px;
-      scrollbar-width: thin;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      justify-content: center;
-      transform: translateZ(0);
-      perspective: 1000px;
-    }
-
-    /* Adicionar classe para o efeito de magnificação */
-    .cat-nav.magnify-effect {
-      position: relative;
-    }
-
-    .cat-nav.magnify-effect .cat-tab {
-      position: relative;
-      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+      box-shadow: 0 4px 12px rgba(119, 44, 191, 0.15);
     }
     .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
@@ -1504,7 +1457,7 @@
       });
     }
 
-    /* ==================== APPLE DOCK MAGNIFICATION ==================== */
+    /* ==================== Efeito Suave de Hover (Apple Dock inspirado) ==================== */
     function setupAppleDockEffect() {
       const nav = document.getElementById("catNav");
       if (!nav) return;
@@ -1512,37 +1465,25 @@
       const tabs = Array.from(nav.querySelectorAll(".cat-tab"));
       if (tabs.length === 0) return;
 
-      // Adiciona estilos inline ou via classe
+      // A apenas um leve efeito de escala e elevação ao estilo Apple Dock
       nav.addEventListener("mousemove", (e) => {
         const navRect = nav.getBoundingClientRect();
         const mouseX = e.clientX;
-
-        // Se o mouse estiver fora da área horizontal do menu, reseta
-        if (mouseX < navRect.left || mouseX > navRect.right) {
-          tabs.forEach(tab => {
-            tab.style.transform = "";
-          });
-          return;
-        }
 
         tabs.forEach(tab => {
           const rect = tab.getBoundingClientRect();
           const tabCenterX = rect.left + rect.width / 2;
           const distance = Math.abs(mouseX - tabCenterX);
 
-          // Raio de alcance do efeito (em pixels)
-          const range = 180;
-
-          if (distance < range) {
-            // Calcula o fator de escala de 1.0 até 1.35 baseado na proximidade
-            const percent = 1 - (distance / range);
-            const scale = 1 + (0.32 * percent);
-            const translateY = -4 * percent;
+          // Fator de escala máximo 1.05 (5% de ampliação) proporcional à distância
+          // Elevação vertical leve de no máximo -3px
+          if (distance < 120) {
+            const percent = 1 - (distance / 120);
+            const scale = 1 + (0.05 * percent);
+            const translateY = -3 * percent;
             tab.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-            tab.style.zIndex = Math.round(10 + percent * 10);
           } else {
             tab.style.transform = "";
-            tab.style.zIndex = "";
           }
         });
       });
@@ -1550,7 +1491,6 @@
       nav.addEventListener("mouseleave", () => {
         tabs.forEach(tab => {
           tab.style.transform = "";
-          tab.style.zIndex = "";
         });
       });
     }
