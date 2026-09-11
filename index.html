@@ -711,6 +711,58 @@
       font-weight: 600;
     }
 
+    /* ============ NOSSA EQUIPE ============ */
+    .team-section {
+      background: #fff;
+      padding: 32px 16px;
+      margin-top: 32px;
+      border-radius: 24px 24px 0 0;
+    }
+    .team-wrap { max-width: 1200px; margin: 0 auto; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .team-card {
+      background: var(--bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: transform 0.2s;
+    }
+    .team-card:hover { transform: translateY(-4px); }
+    .team-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .team-info {
+      padding: 16px;
+    }
+    .team-info h3 {
+      color: var(--roxo);
+      margin-bottom: 4px;
+      font-size: 1.1rem;
+    }
+    .team-role {
+      color: var(--rosa);
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    .team-desc {
+      color: var(--texto-suave);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
     /* ============ RESPONSIVE ============ */
     @media (min-width: 480px) {
       .items-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -721,12 +773,14 @@
       .combos-grid { grid-template-columns: repeat(2, 1fr); }
       .cat-nav { padding: 14px 24px; }
       .sheet { max-height: 85vh; height: 85vh; border-radius: 24px 24px 0 0; left: 20%; right: 20%; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (min-width: 1024px) {
       .items-grid { grid-template-columns: repeat(4, 1fr); }
       .combos-grid { grid-template-columns: repeat(4, 1fr); }
       .sheet { left: 30%; right: 30%; }
+      .team-grid { grid-template-columns: repeat(4, 1fr); }
     }
 
     /* ============ EMPTY STATE ============ */
@@ -763,6 +817,59 @@
     <h2 class="section-title">Catálogo</h2>
     <div id="catalogRoot"></div>
 
+    <!-- NOSSA EQUIPE -->
+    <section class="team-section">
+      <div class="team-wrap">
+        <h2 class="section-title">Nossa Equipe</h2>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dra. Ana Silva">
+            </div>
+            <div class="team-info">
+              <h3>Dra. Ana Silva</h3>
+              <p class="team-role">Dermatologista</p>
+              <p class="team-desc">Especialista em tratamentos de enzimas e jato de plasma. 10 anos de experiência.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Souza">
+            </div>
+            <div class="team-info">
+              <h3>Carlos Souza</h3>
+              <p class="team-role">Maquiador Profissional</p>
+              <p class="team-desc">Mestre em maquiagem social e festiva. 8 anos de experiência.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Juliana Costa">
+            </div>
+            <div class="team-info">
+              <h3>Juliana Costa</h3>
+              <p class="team-role">Design de Sobrancelhas</p>
+              <p class="team-desc">Especialista em micropigmentação e design de sobrancelhas. 6 anos de experiência.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Roberto Lima">
+            </div>
+            <div class="team-info">
+              <h3>Roberto Lima</h3>
+              <p class="team-role">Massoterapeuta</p>
+              <p class="team-desc">Especialista em massagens relaxantes e modeladoras. 7 anos de experiência.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
     <section class="about-section">
       <div class="about-wrap">
         <h2>Sobre o DEPIL JOY</h2>
@@ -1228,6 +1335,33 @@
       html += '<div class="form-group"><label>Cupom de desconto</label>';
       html += '<div class="coupon-row"><input type="text" id="couponInput" maxlength="20" autocomplete="off" /><button type="button" class="coupon-apply-btn" onclick="applyCoupon()">Aplicar</button></div>';
       html += '<div class="coupon-msg" id="couponMsg"></div></div>';
+
+      // Novo campo para horário
+      html += '<div class="form-group"><label>Horário de preferência *</label>';
+      html += '<select id="cliTime" required>';
+      html += '<option value="">Selecione um horário</option>';
+      html += '<option value="08:00">08:00</option>';
+      html += '<option value="09:00">09:00</option>';
+      html += '<option value="10:00">10:00</option>';
+      html += '<option value="11:00">11:00</option>';
+      html += '<option value="12:00">12:00</option>';
+      html += '<option value="13:00">13:00</option>';
+      html += '<option value="14:00">14:00</option>';
+      html += '<option value="15:00">15:00</option>';
+      html += '<option value="16:00">16:00</option>';
+      html += '<option value="17:00">17:00</option>';
+      html += '</select></div>';
+
+      // Novo campo para profissional
+      html += '<div class="form-group"><label>Profissional de preferência</label>';
+      html += '<select id="cliProfessional">';
+      html += '<option value="">Qualquer profissional</option>';
+      html += '<option value="Ana Silva">Dra. Ana Silva (Dermatologista)</option>';
+      html += '<option value="Carlos Souza">Carlos Souza (Maquiador)</option>';
+      html += '<option value="Juliana Costa">Juliana Costa (Design de Sobrancelhas)</option>';
+      html += '<option value="Roberto Lima">Roberto Lima (Massoterapeuta)</option>';
+      html += '</select></div>';
+
       html += '<div class="form-group"><label>Observacao (opcional)</label><textarea id="cliObs" rows="2" maxlength="200" placeholder="Horario de preferencia, referencia..."></textarea></div>';
       html += '<div class="submit-sticky-wrap"><button type="submit" class="submit-btn">📲 Solicitar Agendamento</button></div>';
       html += '</form>';
@@ -1280,10 +1414,12 @@
       const name = ($("#cliName") || {}).value || "";
       const phone = ($("#cliPhone") || {}).value || "";
       const date = ($("#cliDate") || {}).value || "";
+      const time = ($("#cliTime") || {}).value || "";
+      const professional = ($("#cliProfessional") || {}).value || "";
       const obs = ($("#cliObs") || {}).value || "";
 
-      if (!name.trim() || !phone.trim() || !date) {
-        alert("Preencha nome, WhatsApp e data.");
+      if (!name.trim() || !phone.trim() || !date || !time) {
+        alert("Preencha nome, WhatsApp, data e horário.");
         return;
       }
 
@@ -1303,7 +1439,9 @@
       msg += "*ORÇAMENTO DO SERVIÇO — Centro Estético DEPIL JOY*\n\n";
       msg += "*Cliente:* " + name.trim() + "\n";
       msg += "*WhatsApp:* " + phone.trim() + "\n";
-      msg += "*Data do evento:* " + fmtDate(date) + "\n\n";
+      msg += "*Data do evento:* " + fmtDate(date) + " às " + time + "\n";
+      if (professional) msg += "*Profissional de preferência:* " + professional + "\n";
+      msg += "\n";
       msg += "*Itens:*\n" + itemsTxt + "\n";
       msg += "Subtotal: " + brl(sub) + "\n";
       if (off > 0) msg += "Cupom " + coupon + ": -" + brl(off) + "\n";
