@@ -1064,6 +1064,86 @@
     }
     .empty-state .empty-icon { font-size: 3rem; margin-bottom: 8px; }
     .empty-state p { margin-bottom: 4px; }
+  /* ============ INSTALL MODAL ============ */
+  .install-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 37, 43, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 16px;
+  }
+  .install-modal.show { display: flex; }
+  .install-modal-content {
+    background: var(--bg);
+    border-radius: 24px;
+    padding: 24px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--sombra-forte);
+    position: relative;
+  }
+  .install-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--texto-suave);
+    cursor: pointer;
+    padding: 4px;
+  }
+  .install-modal-title {
+    color: var(--roxo);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+  }
+  .install-modal-text {
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .install-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  .install-modal-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+  }
+  .install-modal-install {
+    background: var(--rosa);
+    color: white;
+    border: none;
+  }
+  .install-modal-install:hover {
+    background: var(--roxo);
+  }
+  .install-modal-cancel {
+    background: var(--bg);
+    color: var(--texto-suave);
+    border: 1px solid var(--borda);
+  }
+  .install-modal-cancel:hover {
+    background: #f0f0f0;
+  }
+
+  /* ============ MEDIA QUERIES ============ */
+  @media (min-width: 769px) {
+    .install-modal { display: none !important; }
+  }
   </style>
 </head>
 <body>
@@ -1175,6 +1255,19 @@
     <span>📲 Instale no seu celular</span>
     <button class="install-btn" onclick="installPWA()">Instalar</button>
     <button class="dismiss-btn" onclick="dismissInstall()">✕</button>
+  </div>
+
+  <!-- INSTALL MODAL -->
+  <div class="install-modal" id="installModal">
+    <div class="install-modal-content">
+      <button class="install-modal-close" onclick="closeInstallModal()">✕</button>
+      <h3 class="install-modal-title">Instale a DEPIL JOY no seu celular</h3>
+      <p class="install-modal-text">Tenha acesso rápido ao nosso site sempre que precisar.</p>
+      <div class="install-modal-actions">
+        <button class="install-modal-btn install-modal-install" onclick="installPWA()">Instalar agora</button>
+        <button class="install-modal-btn install-modal-cancel" onclick="closeInstallModal()">Agora não</button>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -1830,6 +1923,8 @@
 
     /* ==================== PWA ==================== */
     let deferredInstall = null;
+    let installModalShownThisNavigation = false;
+
     window.addEventListener("beforeinstallprompt", e => {
       e.preventDefault();
       deferredInstall = e;
@@ -1844,6 +1939,7 @@
       deferredInstall.prompt();
       deferredInstall.userChoice.then(() => {
         $("#installBar").classList.remove("show");
+        closeInstallModal();
         deferredInstall = null;
       });
     }
@@ -1851,6 +1947,33 @@
     function dismissInstall() {
       $("#installBar").classList.remove("show");
       try { localStorage.setItem("depil-joy-install-dismissed", "1"); } catch (e) {}
+    }
+
+    // Modal de Instalação (Exclusivo Mobile/Tablet, aparece 10s após carregamento se não descartado)
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches || window.matchMedia("(pointer: coarse)").matches;
+        if (isMobile && !installModalShownThisNavigation) {
+          showInstallModal();
+        }
+      }, 10000);
+    });
+
+    function showInstallModal() {
+      const modal = $("#installModal");
+      if (modal) {
+        modal.classList.add("show");
+        document.body.classList.add("no-scroll");
+        installModalShownThisNavigation = true;
+      }
+    }
+
+    function closeInstallModal() {
+      const modal = $("#installModal");
+      if (modal) {
+        modal.classList.remove("show");
+        document.body.classList.remove("no-scroll");
+      }
     }
 
     if ("serviceWorker" in navigator) {
