@@ -1,5 +1,5 @@
 // Service Worker para DEPIL JOY - PWA
-const CACHE_NAME = 'depil-joy-v2';
+const CACHE_NAME = 'depil-joy-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -17,19 +17,36 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
   const isBanner = requestUrl.pathname === '/img/banner-depiljoy.png';
+  const isNavigation = requestUrl.pathname === '/' || requestUrl.pathname === '/index.html';
 
-  event.respondWith(
-    isBanner
-      ? fetch(event.request, { cache: 'reload' })
-          .then((response) => {
+  if (isBanner) {
+    event.respondWith(
+      fetch(event.request, { cache: 'reload' })
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  } else if (isNavigation) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
             const copy = response.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-            return response;
-          })
-          .catch(() => caches.match(event.request))
-      : caches.match(event.request)
-          .then((response) => response || fetch(event.request))
-  );
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request)
+        .then((response) => response || fetch(event.request))
+    );
+  }
 });
 
 self.addEventListener('activate', (event) => {
