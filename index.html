@@ -1918,12 +1918,29 @@
     /* ==================== PWA ==================== */
     let deferredInstall = null;
     let installModalShownThisNavigation = false;
+    let isPWAInstalled = false;
+
+    // Verificar se o site está sendo acessado como PWA ou se já foi instalado anteriormente via localStorage
+    if (window.matchMedia('(display-mode: standalone)').matches || localStorage.getItem('depil-joy-installed') === '1') {
+      isPWAInstalled = true;
+      try {
+        localStorage.setItem('depil-joy-installed', '1');
+      } catch (e) {}
+    }
+
+    // Listener para instalação concluída
+    window.addEventListener('appinstalled', () => {
+      isPWAInstalled = true;
+      try {
+        localStorage.setItem('depil-joy-installed', '1');
+      } catch (e) {}
+    });
 
     window.addEventListener("beforeinstallprompt", e => {
       e.preventDefault();
       deferredInstall = e;
       const isMobile = window.matchMedia("(max-width: 768px)").matches || window.matchMedia("(pointer: coarse)").matches;
-      if (isMobile && !localStorage.getItem("depil-joy-install-dismissed")) {
+      if (isMobile && !localStorage.getItem("depil-joy-install-dismissed") && !isPWAInstalled) {
         $("#installBar").classList.add("show");
       }
     });
@@ -1931,7 +1948,13 @@
     function installPWA() {
       if (!deferredInstall) return;
       deferredInstall.prompt();
-      deferredInstall.userChoice.then(() => {
+      deferredInstall.userChoice.then(choiceResult => {
+        if (choiceResult.outcome === 'accepted') {
+          isPWAInstalled = true;
+          try {
+            localStorage.setItem('depil-joy-installed', '1');
+          } catch (e) {}
+        }
         $("#installBar").classList.remove("show");
         closeInstallModal();
         deferredInstall = null;
@@ -1947,7 +1970,7 @@
     window.addEventListener("load", () => {
       setTimeout(() => {
         const isMobile = window.matchMedia("(max-width: 768px)").matches || window.matchMedia("(pointer: coarse)").matches;
-        if (isMobile && !installModalShownThisNavigation) {
+        if (isMobile && !installModalShownThisNavigation && !isPWAInstalled) {
           showInstallModal();
         }
       }, 10000);
@@ -1955,7 +1978,7 @@
 
     function showInstallModal() {
       const modal = $("#installModal");
-      if (modal) {
+      if (modal && !isPWAInstalled) {
         modal.classList.add("show");
         document.body.classList.add("no-scroll");
         installModalShownThisNavigation = true;
