@@ -1140,6 +1140,64 @@
     background: #f0f0f0;
   }
 
+  /* ============ CONFIRMATION MODAL ============ */
+  .confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 37, 43, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 16px;
+  }
+  .confirm-modal.show { display: flex; }
+  .confirm-modal-content {
+    background: var(--bg);
+    border-radius: 24px;
+    padding: 32px 24px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--sombra-forte);
+    position: relative;
+  }
+  .confirm-modal-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+  .confirm-modal-title {
+    color: var(--roxo);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+  }
+  .confirm-modal-text {
+    color: var(--texto);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .confirm-modal-btn {
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    background: var(--rosa);
+    color: white;
+    border: none;
+    font-size: 1rem;
+  }
+  .confirm-modal-btn:hover {
+    background: var(--roxo);
+    transform: translateY(-2px);
+  }
+
   /* ============ MEDIA QUERIES ============ */
   @media (min-width: 769px) {
     .install-modal { display: none !important; }
@@ -1261,6 +1319,16 @@
         <button class="install-modal-btn install-modal-install" onclick="installPWA()">Instalar agora</button>
         <button class="install-modal-btn install-modal-cancel" onclick="closeInstallModal()">Agora não</button>
       </div>
+    </div>
+  </div>
+
+  <!-- CONFIRMATION MODAL -->
+  <div class="confirm-modal" id="confirmModal">
+    <div class="confirm-modal-content">
+      <div class="confirm-modal-icon">✓</div>
+      <h3 class="confirm-modal-title">Solicitação recebida!</h3>
+      <p class="confirm-modal-text">A Depil Joy entrará em contato com você brevemente para confirmar seu agendamento. OBRIGADO PELA SUA PREFERÊNCIA!</p>
+      <button class="confirm-modal-btn" onclick="closeConfirmModal()">Entendi</button>
     </div>
   </div>
 
@@ -1816,11 +1884,30 @@
       const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
       window.open(url, "_blank");
 
+      closeSheet();
+
       try { localStorage.setItem("depil-joy-last", JSON.stringify({ cart, coupon })); } catch (e) {}
 
       setTimeout(() => {
-        alert("A Depil Joy entrará em contato com você brevemente para confirmar seu agendamento. OBRIGADO PELA SUA PREFERÊNCIA!");
+        showConfirmModal();
       }, 1200);
+    }
+
+    /* ==================== CONFIRMATION MODAL ==================== */
+    function showConfirmModal() {
+      const modal = $("#confirmModal");
+      if (modal) {
+        modal.classList.add("show");
+        document.body.classList.add("no-scroll");
+      }
+    }
+
+    function closeConfirmModal() {
+      const modal = $("#confirmModal");
+      if (modal) {
+        modal.classList.remove("show");
+        document.body.classList.remove("no-scroll");
+      }
     }
 
     /* ==================== REPETIR ULTIMA LISTA ==================== */
