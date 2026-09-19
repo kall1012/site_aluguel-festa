@@ -2033,7 +2033,11 @@
     });
 
     function installPWA() {
-      if (!deferredInstall) return;
+      if (!deferredInstall) {
+        alert("O prompt de instalação não está disponível no momento. Tente acessar o site pelo navegador do seu celular (Chrome, Edge ou Safari).");
+        closeInstallModal();
+        return;
+      }
       deferredInstall.prompt();
       deferredInstall.userChoice.then(choiceResult => {
         if (choiceResult.outcome === 'accepted') {
@@ -2045,6 +2049,8 @@
         $("#installBar").classList.remove("show");
         closeInstallModal();
         deferredInstall = null;
+      }).catch(() => {
+        closeInstallModal();
       });
     }
 
